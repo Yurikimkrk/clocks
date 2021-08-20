@@ -1,0 +1,109 @@
+%hour-line
+  height: 12px
+  width: 2px
+  position: absolute
+  background-color: white
+  z-index: 3
+
+=hour0-5($top,$right,$transform)
+  top: $top
+  right: $right
+  transform: $transform
+
+=hour6-11($bottom,$left,$transform)
+  bottom: $bottom
+  left: $left
+  transform: $transform
+
+.clock
+  width: 200px
+  height: 200px
+  background: -webkit-radial-gradient(#3b3b3b, #000)
+  background: radial-gradient(#3b3b3b, #000)
+  border: 6px solid #222
+  border-radius: 50%
+  margin: auto
+  position: absolute
+
+.hand
+  background: #fff
+  position: absolute
+  -webkit-transform-origin: 50% 100%
+  -moz-transform-origin: 50% 100%
+  -o-transform-origin: 50% 100%
+  -ms-transform-origin: 50% 100%
+  transform-origin: 50% 100%
+
+.hour-hand
+  width: 5px
+  height: 40px
+  top: 55px
+  left: 91px
+  background-color: aliceblue
+  z-index: 1
+
+.min-hand
+  width: 3px
+  height: 80px
+  box-shadow: 0 0 4px #000
+  top: 15px
+  left: 92px
+  z-index: 2
+
+.second-hand
+  width: 2px
+  height: 85px
+  background-color: yellow
+  box-shadow: 0 0 7px #000
+  top: 10px
+  left: 93px
+  z-index: 5
+
+.dot
+  width: 11px
+  height: 11px
+  border-radius: 50%
+  position: absolute
+  bottom: 87px
+  right: 89px
+  background-color: white
+  z-index: 10
+
+.hour-0, .hour-1, .hour-2, .hour-3, .hour-4, .hour-5, .hour-6, .hour-7, .hour-8, .hour-9, .hour-10, .hour-11
+  @extend %hour-line
+
+.hour-0
+  +hour0-5(1px,93px,rotate(0deg))
+
+.hour-1
+  +hour0-5(12px,49px,rotate(30deg))
+
+.hour-2
+  +hour0-5(44px,17px,rotate(60deg))
+
+.hour-3
+  +hour0-5(89px,4px,rotate(90deg))
+
+.hour-4
+  +hour0-5(134px,17px,rotate(120deg))
+
+.hour-5
+  +hour0-5(164px,49px,rotate(150deg))
+
+.hour-6
+  +hour6-11(1px,93px,rotate(0deg))
+
+.hour-7
+  +hour6-11(11px,49px,rotate(30deg))
+
+.hour-8
+  +hour6-11(43px,17px,rotate(60deg))
+
+.hour-9
+  +hour6-11(88px,4px,rotate(90deg))
+
+.hour-10
+  +hour6-11(132px,17px,rotate(120deg))
+
+.hour-11
+  +hour6-11(164px,49px,rotate(150deg))
