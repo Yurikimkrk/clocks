@@ -1,20 +1,21 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 import './LocalClock.sass'
+import {LOCAL_GMT_DELTA} from '../../../redux/variables'
 
-export const LocalClock = () => {
+export const LocalClock = ({isGmtTime}) => {
   const timeNow = useSelector(state => state.app.time)
 
-
-  let day = new Date(timeNow)
-  let hourAdjust = day.getHours()
-  let hours = hourAdjust % 24 > 9 ? hourAdjust % 24 : '0' + hourAdjust % 24
-  let minutes = day.getMinutes() > 9 ? day.getMinutes() : '0' + day.getMinutes()
-  let seconds = day.getSeconds() > 9 ? day.getSeconds() : '0' + day.getSeconds()
+  const day = new Date(timeNow)
+  const hourAdjust = isGmtTime? day.getHours() - LOCAL_GMT_DELTA : day.getHours()
+  const hourCorrect = hourAdjust % 24
+  const hours = hourCorrect > 9 ? hourCorrect : '0' + hourCorrect
+  const minutes = day.getMinutes() > 9 ? day.getMinutes() : '0' + day.getMinutes()
+  const seconds = day.getSeconds() > 9 ? day.getSeconds() : '0' + day.getSeconds()
 
   return (
     <div>
-      <div className={'clock-box'}>
+      <div className={'local-clock-box'}>
         {hours}:{minutes}:{seconds}
       </div>
     </div>
