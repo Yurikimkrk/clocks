@@ -1,0 +1,5 @@
+{
+  "port": 5000,
+  "mongoUri": "mongodb+srv://Total:VDLSpVhKjwDoy1Qr@cluster0.rz2b5.mongodb.net/clocks?retryWrites=true&w=majority",
+  "baseUrl": "http://localhost:5000"
+}
