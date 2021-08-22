@@ -19,6 +19,8 @@ const App = () => {
     clocks[i] = i + 1
   }
 
+
+
   useEffect(() => {
     timezonesRequest().then((data) => {
       dispatch(setTimezones(data))
