@@ -1,4 +1,9 @@
+import axios from "axios"
+
+
 export const timezonesRequest = async() => {
-  const response = await fetch('../../timezones.json')
-  return await response.json()
+  const instance = await axios.create({
+    baseURL: (process.env.NODE_ENV === 'development') ? 'http://localhost:5000': 'http://yurykimtest.tk'
+  })
+  return instance.get(`/api/city`).then(response => (response.data))
 }
