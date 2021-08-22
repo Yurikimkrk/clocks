@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const {CleanWebpackPlugin} = require("clean-webpack-plugin")
 
@@ -7,7 +7,7 @@ module.exports = {
   entry: ["@babel/polyfill", "./src/index.jsx"],
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index_bundle.js"
+    filename: "[name].[hash].js"
   },
   resolve: {
     extensions: [".js", ".jsx"]
