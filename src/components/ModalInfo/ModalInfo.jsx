@@ -30,8 +30,11 @@ export const ModalInfo = ({show, onHide}) => {
         на сервер через REST API (к стеку добавлены "express", "axios", "mongoDB").
         Фронтенд делает запрос на сервер при запуске приложения, также запрос можно
         проверить напрямую по адресу '
-        <a href="http://localhost:5000/api/city" target="_blank">
+        <a href="http://localhost:5000/api/city" target="_blank" rel="noreferrer">
             http://localhost:5000/api/city</a>'
+        Деплой проекта ' <a href="http://yuriykimtest.tk" target="_blank" rel="noreferrer">
+        http://yuriykimtest.tk</a> '
+
       </Modal.Body>
     </Modal>
   )

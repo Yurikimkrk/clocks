@@ -19,7 +19,7 @@ export const CityBlock = () => {
     if (cities.length > 0) {
       setTimezone(Number.parseInt(cities[defaultCity].timezone))
     }
-  }, [cities])
+  }, [cities, defaultCity])
 
   return (
     <div>
