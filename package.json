@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --open"
+    "client": "webpack serve --open",
+    "server": "nodemon server.js",
+    "start": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -14,9 +16,12 @@
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "concurrently": "^6.2.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "nodemon": "^2.0.12",
     "sass": "^1.38.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
@@ -27,7 +32,12 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@popperjs/core": "^2.9.3",
+    "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.5",
     "react-dom": "^17.0.2",
